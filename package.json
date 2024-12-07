@@ -1,0 +1,24 @@
+{
+  "name": "wax-snapshots-speedtest",
+  "version": "1.0.0",
+  "description": "Tool to discover and speed test WAX blockchain snapshot providers",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wax",
+    "blockchain",
+    "snapshot",
+    "speed-test"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "eosjs": "^22.1.0",
+    "node-fetch": "^3.3.0"
+  }
+}
