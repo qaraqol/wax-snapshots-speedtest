@@ -9,7 +9,8 @@ async function testSpeed(snapshot, testDuration = 10000) {
     let bytesReceived = 0;
     let result = {
       name: snapshot.name,
-      url: snapshot.snapshotUrl,
+      url: snapshot.url, // Use the base URL from provider metadata
+      snapshotUrl: snapshot.snapshotUrl, // Keep the full snapshot URL for downloading
       timestamp: new Date().toISOString(),
     };
 
@@ -84,7 +85,8 @@ async function runSpeedTests(snapshots) {
       console.error(`Error testing ${snapshot.name}:`, error.message);
       results.push({
         name: snapshot.name,
-        url: snapshot.snapshotUrl,
+        url: snapshot.url, // Use the base URL
+        snapshotUrl: snapshot.snapshotUrl,
         status: "error",
         error: error.message,
         timestamp: new Date().toISOString(),

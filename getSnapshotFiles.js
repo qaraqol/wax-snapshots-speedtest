@@ -284,9 +284,17 @@ class SnapshotFinder {
       console.log(`Checking provider: ${provider.name} (${cleanUrl})`);
       try {
         const snapshot = await this.findWaxSnapshot(cleanUrl);
-        results.push({ name: provider.name, snapshotUrl: snapshot });
+        results.push({
+          name: provider.name,
+          url: cleanUrl, // Add the base URL
+          snapshotUrl: snapshot,
+        });
       } catch (error) {
-        results.push({ name: provider.name, snapshotUrl: null });
+        results.push({
+          name: provider.name,
+          url: cleanUrl, // Add the base URL
+          snapshotUrl: null,
+        });
       }
     }
     return results;
