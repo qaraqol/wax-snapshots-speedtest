@@ -86,7 +86,6 @@ async function runSpeedTests(snapshots) {
       results.push({
         name: snapshot.name,
         url: snapshot.url, // Use the base URL
-        snapshotUrl: snapshot.snapshotUrl,
         status: "error",
         error: error.message,
         timestamp: new Date().toISOString(),
